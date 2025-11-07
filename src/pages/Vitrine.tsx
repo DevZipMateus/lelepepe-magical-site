@@ -28,6 +28,8 @@ const Vitrine = () => {
           title="Vitrine Lelê Pepê"
         />
       </main>
+      {/* Rodapé MonteSite - Atualização Automática */}
+      <div id="montesite-footer-badge"></div>
     </div>
   );
 };
