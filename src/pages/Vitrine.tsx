@@ -21,7 +21,7 @@ const Vitrine = () => {
   return (
     <div className="h-screen overflow-hidden flex flex-col">
       <Header />
-      <main className="flex-1 w-full" style={{ height: iframeHeight }}>
+      <main className="flex-1 w-full pt-20" style={{ height: iframeHeight }}>
         <iframe
           src="https://lelepepe.egestor.com.br/vitrine/"
           className="w-full h-full border-none"
