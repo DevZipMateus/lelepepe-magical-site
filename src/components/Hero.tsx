@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Heart, Shield } from "lucide-react";
+import { Sparkles, Heart, Shield, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
@@ -46,6 +47,17 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="text-lg px-8 py-6" asChild>
+              <Link to="/vitrine" className="flex items-center gap-2">
+                <ShoppingBag className="w-5 h-5" />
+                Ver vitrine
+              </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-6 bg-background/50 hover:bg-primary hover:text-primary-foreground border-primary/60"
+              asChild
+            >
               <a href="https://wa.me/5512992500194" target="_blank" rel="noopener noreferrer">
                 Entre em contato
               </a>
