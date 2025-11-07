@@ -28,6 +28,7 @@ const Vitrine = () => {
           title="Vitrine Lelê Pepê"
         />
       </main>
+      <div id="montesite-footer-badge"></div>
     </div>
   );
 };
