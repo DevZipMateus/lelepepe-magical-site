@@ -19,7 +19,7 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 w-full pt-20" style={{ height: iframeHeight }}>
         <iframe
