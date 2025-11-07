@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,13 @@ const Header = () => {
     { label: "Valores", href: "#valores" },
     { label: "Contato", href: "#contato" },
   ];
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (isHomePage) {
+      e.preventDefault();
+      scrollToSection("#inicio");
+    }
+  };
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
@@ -44,20 +54,17 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <a
-            href="#inicio"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#inicio");
-            }}
+          <Link
+            to="/"
+            onClick={handleLogoClick}
             className="flex items-center"
           >
             <img src={logo} alt="Lelê Pepê - Acessórios Infantis" className="h-12 w-auto" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {isHomePage && navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
@@ -70,6 +77,20 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
+            {!isHomePage && (
+              <Link
+                to="/"
+                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+              >
+                Voltar ao início
+              </Link>
+            )}
+            <Link
+              to="/vitrine"
+              className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+            >
+              Vitrine
+            </Link>
             <Button asChild>
               <a href="https://wa.me/5512992500194" target="_blank" rel="noopener noreferrer">
                 Fale conosco
@@ -91,7 +112,7 @@ const Header = () => {
         {isOpen && (
           <nav className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
+              {isHomePage && navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -104,6 +125,22 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
+              {!isHomePage && (
+                <Link
+                  to="/"
+                  onClick={() => setIsOpen(false)}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+                >
+                  Voltar ao início
+                </Link>
+              )}
+              <Link
+                to="/vitrine"
+                onClick={() => setIsOpen(false)}
+                className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+              >
+                Vitrine
+              </Link>
               <Button asChild className="w-full">
                 <a href="https://wa.me/5512992500194" target="_blank" rel="noopener noreferrer">
                   Fale conosco
