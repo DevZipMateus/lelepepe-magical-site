@@ -1,10 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, Heart, Shield } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-background via-secondary/20 to-background">
-      <div className="container mx-auto px-4 py-16">
+    <section 
+      id="inicio" 
+      className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-background via-secondary/20 to-background relative"
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-4 mb-6 flex-wrap">
             <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
