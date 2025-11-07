@@ -6,6 +6,7 @@ import VitrineSection from "@/components/VitrineSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MonteSiteBadge from "@/components/MonteSiteBadge";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <MonteSiteBadge fixed={false} />
       <WhatsAppButton />
     </div>
   );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
+import MonteSiteBadge from "@/components/MonteSiteBadge";
 
 const Vitrine = () => {
   const [iframeHeight, setIframeHeight] = useState("calc(100vh - 143px)");
@@ -28,6 +29,7 @@ const Vitrine = () => {
           title="Vitrine Lelê Pepê"
         />
       </main>
+      <MonteSiteBadge fixed={true} />
     </div>
   );
 };
