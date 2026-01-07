@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import MonteSiteBadge from "@/components/MonteSiteBadge";
 
 const Vitrine = () => {
   return (
@@ -12,7 +11,6 @@ const Vitrine = () => {
           title="Vitrine Lelê Pepê"
         />
       </main>
-      <MonteSiteBadge fixed={true} />
     </div>
   );
 };
